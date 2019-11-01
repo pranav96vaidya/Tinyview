@@ -1,0 +1,16 @@
+.comic-cover-container {
+  max-width: 650px;
+  margin: 0 auto;
+  padding-top: 15px;
+  
+  app-image {
+    display: inline-block;
+    ::ng-deep {
+      .image-container {
+        .img {
+          min-height: 390px;
+        }
+      }
+    }
+  }
+}

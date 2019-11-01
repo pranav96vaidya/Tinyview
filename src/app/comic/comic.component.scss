@@ -1,0 +1,21 @@
+.comic-container {
+  max-width: 750px;
+  margin: 0 auto;
+  padding-top: 15px;
+  
+  .chapter-list-container {
+
+    app-image { 
+      display: inline-block;
+    }
+
+    .image-container {
+      display: inline-block;
+      
+      .img {
+        padding-bottom: 15px;
+        width: 100%;
+      }
+    }
+  }
+}

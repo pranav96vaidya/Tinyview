@@ -1,0 +1,16 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <!-- <a class="navbar-brand" routerLink="/">
+    <img class="header-img" src="assets/images/comic-logo.png" alt="Comic Icon">
+    <ul class="nav navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Website Name</a></li>
+    </ul>
+  </a> -->
+  <div class="d-flex order-0">
+    <a class="navbar-brand mr-1" routerLink="/">
+      <img class="header-img" src="assets/images/comic-logo.png" alt="Comic Icon">
+    </a>
+  </div>
+  <div class="header-container" *ngIf="post | async as p">
+    <span class="head-content">{{ p.text }}</span>
+  </div>
+</nav>

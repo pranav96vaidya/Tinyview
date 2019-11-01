@@ -1,0 +1,6 @@
+<a class="image-container" *ngIf="comicData.action" [routerLink]="navigateRoute" routerLinkActive="router-link-active"  (click)="navigateToRoute()">
+  <img lazyload="{{imgUrl}}" class="img">
+</a> 
+<a class="image-container" *ngIf="!comicData.action">
+  <img lazyload="{{imgUrl}}" class="img">
+</a>

@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import './assets/scss/variables';
+
+.loading-indicator-wrapper {
+  left: 48%;
+  position: absolute;
+  top: 50%;
+
+  .mat-progress-spinner {
+  
+    circle {
+      stroke: $blackColor;
+    }
+  }
+}
+
+.body {
+  position: relative;
+  min-height: 100vh;
+}

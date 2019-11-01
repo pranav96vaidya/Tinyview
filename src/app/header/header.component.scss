@@ -1,0 +1,14 @@
+.header-img {
+  height: 40px;
+  width: 40px; 
+}
+
+.header-container {
+  display: inline-block;
+  margin: 0 auto;
+
+  .head-content {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}

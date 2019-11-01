@@ -1,0 +1,22 @@
+<ng-container *ngIf="!chapterList">
+  <div class="loading-indicator-wrapper">
+    <mat-spinner [diameter]="40"></mat-spinner>
+  </div>
+</ng-container>
+<div *ngIf="chapterList && !comicImage" class="comic-container">
+  <div class="row">
+    <div class="col-12 chapter-list-container" *ngFor="let list of chapterList">
+      <app-image [comicData]="list"></app-image>
+    </div>
+  </div>
+</div>
+<div *ngIf="!chapterList && comicImage" class="comic-container">
+  <div class="row">
+    <div class="col-12 chapter-list-container">
+      <a class="image-container">
+        <img lazyload="{{comicImage}}" class="img">
+      </a>
+    </div>
+  </div>
+</div>
+  
