@@ -17,6 +17,7 @@ interface AppState {
 export class PanelComponent implements OnInit {
   comicList: {};
   text: string;
+  errorMsg: string;
 
   constructor(
     private readonly comicService: ComicService,
@@ -31,6 +32,8 @@ export class PanelComponent implements OnInit {
         this.text = resp.comics.title;
         this.store.dispatch(new PostActions.EditText(this.text));
         this.comicList = resp.comics.panels;
+      }, err => {
+        this.errorMsg = 'No Data Found!';
       });
   }
 

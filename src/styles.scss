@@ -15,7 +15,29 @@
   }
 }
 
-.body {
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
   position: relative;
-  min-height: 100vh;
+  margin: 0;
+  padding-bottom: 62px;
+  min-height: 100%;
+}
+
+.no-data-found {
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 0px;
+  color: $blackColor;
+  font-size: 18px;
+  line-height: 22px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  width: 50%;
+  @media (max-width: $smWidth) {
+    font-size: 16px;
+    width: 80%;
+  }
 }

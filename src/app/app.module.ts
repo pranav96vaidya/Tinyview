@@ -12,6 +12,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { StoreModule } from '@ngrx/store';
 import { Reducer } from './redux/reducer';
 import { LazyLoadDirective } from './directive/lazy-load.directive';
+import { DataNotFoundComponent } from './shared/data-not-found/data-not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LazyLoadDirective } from './directive/lazy-load.directive';
     ComicComponent,
     FooterComponent,
     ImageComponent,
-    LazyLoadDirective
+    LazyLoadDirective,
+    DataNotFoundComponent
   ],
   imports: [
     BrowserModule,

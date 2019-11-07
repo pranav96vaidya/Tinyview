@@ -3,8 +3,18 @@
 </div>
 <div *ngIf="comicList" class="comic-cover-container">
   <div class="row">
-    <div class="col-12" *ngFor="let list of comicList">
+    <div class="col-12 comic-data-container" *ngFor="let list of comicList">
       <app-image [comicData]="list"></app-image>
     </div>
   </div>
 </div>
+<app-data-not-found *ngIf="errorMsg">
+  <div class="no-data-found">
+    <p>
+      {{errorMsg}}
+    </p>
+    <p>
+      <span class="error-navigate" [routerLink]="['']" routerLinkActive="router-link-active">Click here</span> to navigate to home page.
+    </p>
+  </div>
+</app-data-not-found>

@@ -4,3 +4,4 @@
 /dist
 firebase.json
 package-lock.json
+.firebase/

@@ -3,9 +3,10 @@
   margin: 0 auto;
   padding-top: 15px;
   
-  .chapter-list-container {
+  .comic-list-container {
+    margin-bottom: 15px;
 
-    app-image { 
+    app-image {
       display: inline-block;
     }
 
@@ -13,9 +14,12 @@
       display: inline-block;
       
       .img {
-        padding-bottom: 15px;
         width: 100%;
       }
     }
   }
+}
+
+app-data-not-found .no-data-found span {
+  cursor: pointer;
 }

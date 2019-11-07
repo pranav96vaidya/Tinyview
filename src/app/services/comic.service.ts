@@ -26,7 +26,12 @@ export class ComicService {
   }
 
   public getComicChapters(comicName): Observable<any> {
-    const url = `${COMIC_API}${comicName}.json`;
+    let url = null;
+    if (comicName.indexof('chapter') !== -1) {
+      url = `${COMIC_API}${comicName}.json`;
+    } else {
+      url = `${COMIC_API}${comicName}/index.json`;
+    }
     return this.http.get<any>(url)
       .pipe(map(resp => {
         if (resp) {

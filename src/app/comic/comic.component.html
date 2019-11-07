@@ -1,22 +1,39 @@
-<ng-container *ngIf="!chapterList">
-  <div class="loading-indicator-wrapper">
-    <mat-spinner [diameter]="40"></mat-spinner>
-  </div>
-</ng-container>
-<div *ngIf="chapterList && !comicImage" class="comic-container">
+<div class="loading-indicator-wrapper" *ngIf="!fetchDone && !error">
+  <mat-spinner [diameter]="40"></mat-spinner>
+</div>
+<div *ngIf="!(deviceDetails.isAndroid || deviceDetails.isIos) && fetchDone && !isPaid && !error" class="comic-container">
   <div class="row">
-    <div class="col-12 chapter-list-container" *ngFor="let list of chapterList">
+    <div class="col-12 comic-list-container" *ngFor="let list of chapterList">
       <app-image [comicData]="list"></app-image>
     </div>
   </div>
 </div>
-<div *ngIf="!chapterList && comicImage" class="comic-container">
+<div *ngIf="!(deviceDetails.isAndroid || deviceDetails.isIos) && fetchDone && isPaid && !error" class="comic-container">
   <div class="row">
-    <div class="col-12 chapter-list-container">
+    <div class="col-12 comic-list-container">
       <a class="image-container">
-        <img lazyload="{{comicImage}}" class="img">
+        <img src="{{comicImage}}" class="img">
       </a>
     </div>
   </div>
 </div>
+<div *ngIf="(deviceDetails.isAndroid || deviceDetails.isIos) && fetchDone && !error" class="comic-container">
+  <div class="row">
+    <div class="col-12 comic-list-container">
+      <a class="image-container">
+        <img src="{{comicImage}}" class="img">
+      </a>
+    </div>
+  </div>
+</div>
+<app-data-not-found *ngIf="error">
+  <div class="no-data-found">
+    <p>
+      {{errorMsg}}
+    </p>
+    <p>
+      <span class="error-navigate" [routerLink]="['']" routerLinkActive="router-link-active">Click here</span> to navigate to home page.
+    </p>
+  </div>
+</app-data-not-found>
   
